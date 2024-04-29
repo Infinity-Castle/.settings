@@ -1,0 +1,15 @@
+Concurrency: Threads allow multiple tasks to be executed concurrently within a single process. Each thread represents a separate flow of execution, allowing for parallelism and efficient utilization of CPU resources.
+Shared Address Space: Threads within the same process share the same memory space, allowing them to communicate and share data easily. This shared memory enables efficient communication between threads but also requires careful synchronization to prevent data corruption in concurrent access scenarios.
+Thread Creation: Threads can be created by a parent process using system calls or library functions provided by the operating system or programming language. Common methods for creating threads include pthread_create() in POSIX systems (e.g., Linux) and Thread() in Java.
+Thread States: Threads typically go through various states during their lifetime, including:
+Ready: The thread is ready to execute but waiting for CPU time.
+Running: The thread is actively executing instructions on the CPU.
+Blocked/Waiting: The thread is waiting for some event or condition to occur (e.g., I/O operation completion, semaphore signal).
+Terminated: The thread has finished executing and is no longer active.
+Concurrency Issues: Threads introduce concurrency issues such as race conditions, deadlocks, and resource contention. These issues arise when multiple threads access shared resources concurrently without proper synchronization or coordination.
+Thread Synchronization: Synchronization mechanisms such as mutexes, semaphores, and condition variables are used to coordinate access to shared resources and prevent concurrency issues. These mechanisms help ensure that critical sections of code are executed atomically or that threads wait for certain conditions to be met before proceeding.
+Thread Safety: Thread safety refers to the property of a program or library that allows it to be safely used by multiple threads concurrently without causing unexpected behavior or data corruption. Thread safety is achieved through proper synchronization and design practices.
+Benefits of Threads: Threads offer several advantages, including:
+Improved responsiveness: Threads can handle multiple tasks simultaneously, enhancing the responsiveness of applications, especially in user interface and server applications.
+Efficient resource utilization: Threads allow for better utilization of CPU resources by enabling parallelism and concurrent execution of tasks.
+Simplified programming model: Threads provide a simple and natural way to implement concurrent algorithms and applications compared to processes.

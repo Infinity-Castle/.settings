@@ -1,0 +1,23 @@
+A semaphore is a synchronization primitive used in concurrent programming to control access to shared resources by multiple processes or threads. Semaphores maintain a count that represents the number of available resources or the number of slots available in a resource pool. Here's everything you need to know about semaphores:
+
+Binary Semaphore:
+A binary semaphore, also known as a mutex (mutual exclusion), has a count of either 0 or 1.
+It is typically used to protect a critical section of code or to enforce mutual exclusion, ensuring that only one process can access the protected resource at a time.
+Counting Semaphore:
+A counting semaphore has a count greater than or equal to zero.
+It can be used to control access to a finite number of resources, such as a fixed-size buffer or a pool of shared resources.
+Operations:
+Semaphores support two fundamental operations: wait() (also known as P() or down()) and signal() (also known as V() or up()).
+wait(): Decrements the semaphore count by 1. If the count becomes negative, the process is blocked until the count becomes positive again.
+signal(): Increments the semaphore count by 1. If there are blocked processes waiting for the semaphore, one of them is unblocked.
+Usage:
+Before accessing a shared resource or entering a critical section, a process must call wait() to acquire the semaphore.
+After using the resource or exiting the critical section, the process must call signal() to release the semaphore.
+Inter-Process Communication (IPC):
+Semaphores can be used for inter-process communication (IPC) to synchronize access to shared resources among different processes.
+A semaphore is typically created in a shared memory region accessible by multiple processes.
+Each process can access the same semaphore by referencing its key or identifier.
+Atomicity:
+Semaphore operations (wait() and signal()) are atomic, meaning they are executed indivisibly and are not interruptible. This ensures that concurrent access to the semaphore itself is properly synchronized.
+Concurrency Control:
+Semaphores provide a flexible mechanism for coordinating the activities of concurrent processes or threads, allowing for synchronization, mutual exclusion, and deadlock avoidance.

@@ -1,0 +1,27 @@
+Communication Endpoint:
+A socket is a communication endpoint that allows processes to communicate over a network.
+Sockets can be thought of as the interface between the application layer and the transport layer of the networking stack.
+Types of Sockets:
+Stream Sockets (TCP): Stream sockets provide reliable, connection-oriented communication using the Transmission Control Protocol (TCP). They ensure that data is delivered in the correct order and without loss.
+Datagram Sockets (UDP): Datagram sockets provide connectionless, unreliable communication using the User Datagram Protocol (UDP). They are faster but do not guarantee delivery or ordering of data.
+Socket Address:
+Each socket is associated with a unique socket address, which consists of an IP address and a port number.
+The IP address specifies the network address of the destination machine, while the port number identifies the specific process or service on that machine.
+Socket API:
+Sockets are typically accessed through a programming interface known as the socket API.
+The socket API provides functions for creating, binding, connecting, sending, and receiving data through sockets.
+Common socket API functions include socket(), bind(), connect(), send(), and recv().
+Socket Lifecycle:
+Creation: A socket is created using the socket() function, which returns a socket descriptor that serves as a reference to the socket.
+Binding: For servers, the socket is bound to a specific port and optionally to a specific IP address using the bind() function.
+Connection: For client-server communication over TCP, the client socket connects to the server socket using the connect() function.
+Communication: Data is sent and received using the send() and recv() functions, respectively.
+Closing: After communication is complete, sockets are closed using the close() function to release resources and terminate the connection.
+Server-Client Communication:
+In client-server communication, the server creates a socket and listens for incoming connections on a specified port.
+Clients connect to the server using their own sockets, and once the connection is established, data can be exchanged between the client and server.
+Peer-to-Peer Communication:
+In peer-to-peer communication, both endpoints create sockets and establish a direct connection between them.
+Data can be exchanged bidirectionally between the peers once the connection is established.
+Firewall and NAT Traversal:
+Sockets are often used in conjunction with techniques such as port forwarding and Network Address Translation (NAT) traversal to facilitate communication across firewalls and NAT devices.

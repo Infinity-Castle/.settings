@@ -1,0 +1,33 @@
+Queue Structure:
+A message queue is a linear data structure where messages are stored in a FIFO (First-In, First-Out) manner.
+Processes can add messages to the end of the queue (enqueue) and remove messages from the front of the queue (dequeue).
+Point-to-Point Communication:
+Message queues support point-to-point communication between processes.
+Each message has a unique identifier (message type) that determines its destination process.
+Asynchronous Communication:
+Message queues facilitate asynchronous communication, allowing processes to send and receive messages independently of each other.
+Processes can continue their execution without waiting for a response from the recipient process.
+Types of Message Queues:
+System V Message Queues: Introduced in Unix System V, these message queues are identified by a unique key and provide a fixed-size buffer for messages.
+POSIX Message Queues: Defined by the POSIX standard, these message queues are named and accessible via the file system. They support variable-sized messages and provide more features than System V message queues.
+
+
+
+
+#diff between pipes and message queue
+
+Communication Mechanism:
+Pipes: Pipes provide unidirectional communication between related processes, typically a parent and its child, or between processes created by a common ancestor. Data written to one end of the pipe can be read from the other end.
+Message Queues: Message queues provide bidirectional communication between unrelated processes. Processes can send and receive messages asynchronously using message queues. Each message has a unique identifier and can be received by any process with appropriate permissions.
+Connection:
+Pipes: Pipes are established between related processes at the time of creation. They exist within the process hierarchy and are typically created using the pipe() system call.
+Message Queues: Message queues are created independently of process relationships. They are identified by a name or key and are accessible by any process with appropriate permissions.
+Synchronization:
+Pipes: Pipes provide synchronous communication, meaning the writing process may block if the pipe is full, or the reading process may block if the pipe is empty. However, pipes can also be implemented using non-blocking I/O.
+Message Queues: Message queues support asynchronous communication. Processes can send and receive messages independently without waiting for the other process to be ready. Messages are stored in a queue until they are read by the recipient process.
+Data Structure:
+Pipes: Pipes are typically implemented as a simple buffer in memory, allowing data to be passed between processes.
+Message Queues: Message queues are more structured and may be implemented as a linked list or similar data structure. Each message in the queue has a header containing metadata such as message type and size.
+Message Size:
+Pipes: Pipes have a limited buffer size, which may restrict the size of data that can be passed between processes.
+Message Queues: Message queues often support larger message sizes, allowing processes to exchange larger amounts of data.

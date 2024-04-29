@@ -3,15 +3,17 @@
 #include<unistd.h>
 
 int main(){
-    // execl("/bin/ls","ls","-l",NULL);
+    execl("/bin/ls","ls","-l",NULL);
 
     char *arr[]={"ls","-l",NULL};
+    
     char *env[]={"PATH=/bin"};
-    // execv("/bin/ls",arr);
 
-    // execlp("ls",NULL);
+    execv("/bin/ls",arr);
 
-    // execvp("ls",arr);
+    execlp("ls",NULL);
 
-    // execve("/bin/ls",arr,env);
+    execvp("ls",arr);
+
+    execve("/bin/ls",arr,env);
 }

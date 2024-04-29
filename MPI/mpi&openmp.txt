@@ -1,0 +1,23 @@
+OpenMP (Open Multi-Processing):
+OpenMP is an API (Application Programming Interface) that supports shared memory multiprocessing programming in C, C++, and Fortran.
+It allows developers to add parallelism to their code by annotating sections of code with compiler directives, such as #pragma omp.
+OpenMP is typically used for parallelizing loops, sections of code, or tasks that can be executed independently.
+It simplifies parallel programming by providing a high-level interface and is suitable for applications running on a single node with multiple cores.
+
+
+MPI (Message Passing Interface):
+MPI is a standard for message-passing parallel programming, used primarily in distributed-memory environments.
+It enables communication and coordination among processes running on different nodes of a distributed computing system.
+MPI allows developers to explicitly control data communication between processes using functions like MPI_Send and MPI_Recv.
+It's commonly used for parallelizing applications across multiple nodes in high-performance computing (HPC) clusters or supercomputers.
+Differences:
+
+Programming Model:
+OpenMP uses a shared memory model, where multiple threads share the same memory space and communicate through shared variables.
+MPI uses a distributed memory model, where each process has its own memory space, and communication occurs through message passing.
+Scope:
+OpenMP is typically used for parallelizing code within a single node.
+MPI is designed for parallelizing code across multiple nodes in a distributed environment.
+Complexity:
+OpenMP is generally considered easier to learn and use, especially for parallelizing simple loops or sections of code.
+MPI offers more control and flexibility but can be more complex, especially for large-scale distributed applications.

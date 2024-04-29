@@ -1,0 +1,48 @@
+Pipes:
+Description: Pipes provide a one-way communication channel between related processes, typically parent and child processes.
+Advantages:
+Simple to implement and use.
+Low overhead.
+Disadvantages:
+Limited to communication between related processes.
+Unidirectional (one process writes, the other reads).
+Named Pipes (FIFOs):
+Description: Named pipes are similar to pipes but exist as filesystem entries, allowing unrelated processes to communicate.
+Advantages:
+Allows communication between unrelated processes.
+Simple to implement and use.
+Disadvantages:
+Unidirectional.
+Limited to communication within a filesystem.
+Message Queues:
+Description: Message queues allow processes to communicate by sending and receiving messages, which are stored in a queue.
+Advantages:
+Supports bidirectional communication.
+Messages can have different priorities.
+Disadvantages:
+More complex than pipes.
+Limited to communication within a system.
+Shared Memory:
+Description: Shared memory allows multiple processes to share a region of memory, enabling fast communication.
+Advantages:
+Fastest IPC method as it avoids copying data.
+Supports bidirectional communication.
+Disadvantages:
+Requires careful synchronization to avoid race conditions.
+Limited to communication on the same system.
+Sockets:
+Description: Sockets provide a communication endpoint that allows processes to communicate over a network or locally.
+Advantages:
+Supports communication between processes on different systems.
+Flexible and scalable.
+Disadvantages:
+More complex than other IPC methods.
+Higher overhead compared to shared memory or pipes.
+Signals:
+Description: Signals are software interrupts that can be used to notify a process of an event.
+Advantages:
+Simple to use for event notification.
+Asynchronous.
+Disadvantages:
+Limited data transfer capabilities.
+Not suitable for large data transfers.

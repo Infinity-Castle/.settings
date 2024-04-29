@@ -1,0 +1,18 @@
+Creating the Semaphore:
+The semaphore is created using the semget() system call, which allocates a new semaphore set or obtains the identifier of an existing set.
+The semaphore set is typically stored in the kernel's memory and is associated with a unique key.
+Obtaining Access to the Semaphore:
+Processes wishing to access the semaphore need to obtain its identifier using the semget() system call.
+To access the semaphore, processes specify the same key used during its creation. This key serves as a unique identifier for the semaphore set.
+Attaching to the Semaphore Set:
+Once a process has obtained the semaphore identifier, it attaches to the semaphore set using the semop() system call or similar functions such as semctl().
+Attaching to the semaphore set allows the process to perform semaphore operations such as wait() (P) and signal() (V) on individual semaphores within the set.
+Semaphore Operations:
+Processes perform semaphore operations (wait() and signal()) using the semop() system call.
+These operations allow processes to acquire and release semaphores within the semaphore set, controlling access to shared resources or coordinating synchronization.
+Synchronization:
+Processes use semaphore operations to synchronize their access to shared resources or to coordinate their activities.
+For example, a process may use a semaphore to ensure exclusive access to a critical section of code or to limit the number of processes accessing a resource concurrently.
+Cleanup:
+When processes no longer need access to the semaphore, they can detach from the semaphore set using the semctl() system call with the IPC_RMID command.
+Once all processes have detached from the semaphore set, the kernel deallocates the associated resources.

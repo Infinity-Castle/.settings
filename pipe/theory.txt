@@ -1,0 +1,8 @@
+Naming: Named pipes have a name in the file system and can be accessed like regular files. Unnamed pipes, on the other hand, are created using the pipe() system call and do not have a name associated with them.
+Persistence: Named pipes persist beyond the lifetime of the processes that created them. They exist as long as they are not explicitly removed. Unnamed pipes, on the contrary, exist only as long as the processes using them are running. Once the processes close the pipe ends, the pipe is automatically destroyed.
+Unrelated Processes: Named pipes can be used for communication between unrelated processes. Since they have a name in the file system, any process with appropriate permissions can access them. Unnamed pipes, however, are typically used for communication between related processes, like a parent and its child, as they are created in memory and not accessible by unrelated processes.
+Complexity: Named pipes are more complex to use and manage compared to unnamed pipes, as they require file system operations for creation, removal, and access control. Unnamed pipes are simpler and more lightweight since they are created and managed entirely within the kernel.
+Error Handling: Named pipes provide better error handling and error reporting compared to unnamed pipes. Since named pipes are associated with file system operations, errors related to file system access can be easily detected and reported. Unnamed pipes, being solely managed within the kernel, may have more limited error reporting capabilities.
+
+Named pipes are bidirectional 
+Unnamed pipes are unidirectional (creted using pipe sys call)
